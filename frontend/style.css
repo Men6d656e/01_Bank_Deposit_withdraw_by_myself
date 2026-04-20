@@ -49,6 +49,11 @@ h3 {
     margin-bottom: 0.5rem;
 }
 
+a {
+    color: var(--accent-color);
+    font-weight: bolder;
+}
+
 .highlight {
     color: var(--accent-color);
     word-break: break-all;
