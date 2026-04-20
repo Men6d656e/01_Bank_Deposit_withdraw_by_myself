@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundry Bank DApp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Ethers.js v6 CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.11.1/ethers.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <h1>Foundry Bank: A Full-Cycle Deployment Journey.</h1>
+        </header>
+
+        <!-- The Triad Section -->
+        <section class="triad-section">
+            <div class="card">
+                <h2>Anvil</h2>
+                <span class="label">Local Development</span>
+                <p>Tested and verified in a sub-second local environment.</p>
+            </div>
+            <div class="card">
+                <h2>Ganache</h2>
+                <span class="label">Local Visualizer</span>
+                <p>Blockchain state visualized for debugging.</p>
+            </div>
+            <div class="card active-card">
+                <h2>Sepolia</h2>
+                <span class="label">Live Testnet</span>
+                <p>Deployed to the world. Interaction enabled.</p>
+            </div>
+        </section>
+
+        <!-- The Instruction Note -->
+        <div class="alert-box">
+            <p><strong>NOTE:</strong> To run this DApp with Anvil or Ganache, please refer to the README.md in the repository for RPC configuration. Below is the live interaction portal for Sepolia.</p>
+        </div>
+
+        <!-- The Sepolia Interaction Portal -->
+        <section class="portal-section">
+            <h2>Sepolia Interaction Portal</h2>
+            
+            <div class="wallet-controls">
+                <button id="connectWalletBtn" class="btn primary-btn">Connect Wallet</button>
+                <div id="walletInfo" class="wallet-info hidden">
+                    <p>Connected: <span id="userAddress" class="highlight">0x...</span></p>
+                    <p>Balance: <span id="userBalance" class="highlight">0.0</span> ETH</p>
+                </div>
+            </div>
+
+            <div class="contract-info">
+                <p>Contract Address: <span class="highlight">0x373f77cFcd8167dA0A143EC1eb7B4DB204e04444</span></p>
+            </div>
+
+            <div class="bank-stats">
+                <h3>My Bank Deposits</h3>
+                <p class="stat-value"><span id="bankDeposits">0.0</span> ETH</p>
+            </div>
+
+            <div class="transaction-controls">
+                <div class="action-group">
+                    <input type="number" id="depositAmount" placeholder="Value in ETH" min="0" step="0.001">
+                    <button id="depositBtn" class="btn action-btn">Deposit Funds</button>
+                </div>
+                <div class="action-group">
+                    <input type="number" id="withdrawAmount" placeholder="Value in ETH" min="0" step="0.001">
+                    <button id="withdrawBtn" class="btn action-btn">Withdraw Funds</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
